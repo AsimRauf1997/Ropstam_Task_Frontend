@@ -75,17 +75,7 @@ const Cars = () => {
 		handleShow();
 	};
 	const handleAddCar = () => {
-		if (
-			!(
-				name &&
-				registerationNo &&
-				model &&
-				make &&
-				selectedCategory &&
-				hp &&
-				color
-			)
-		) {
+		if (!(name && registerationNo && model && selectedCategory && color)) {
 			return setError('All Fields Are Required');
 		}
 		const data = {
@@ -93,9 +83,7 @@ const Cars = () => {
 			category: selectedCategory.value,
 			registration_no: registerationNo,
 			color: color,
-			make: make,
 			model: model,
-			hp: hp,
 		};
 		dispatch(AddNewCar(data));
 		setTimeout(() => {
